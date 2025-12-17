@@ -103,6 +103,7 @@ Keep releases small and frequent so students can pull cleanly; resolve conflicts
 │       ├── test_vertex_edge_sets.py
 │       ├── test_adjacency_list.py
 │       └── test_adjacency_matrix.py
+│   └── test_homework_1/     # ignore this folder for now
 ├── notebooks/
 │   └── sequence_of_Jupyter_notebook_tutorials.ipynb
 ├── data/           # large datasets (ignored)
