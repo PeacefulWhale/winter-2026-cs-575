@@ -12,11 +12,18 @@ def test_homework_problem_4() -> None:
 
     # Create graph
     ### FIX THIS ADJACENCY LIST
-    adjacency_list: dict[int, set[int]] = {1: {2},
-                                           2: {3},
-                                           3: {4},
-                                           4: {5},
-                                           5: {1}}
+    # adjacency_list: dict[int, set[int]] = {1: {2},
+    #                                        2: {3},
+    #                                        3: {4},
+    #                                        4: {5},
+    #                                        5: {1}}
+
+    adjacency_list: dict[int, set[int]] = {}
+    for x, row in enumerate(desired_distances):
+        for y, distance in enumerate(row):
+            if int(distance) == 1:
+                adjacency_list.setdefault(x, set()).add(y)
+
     G = adjacency_list_to_graph(adjacency_list)
 
     # when
