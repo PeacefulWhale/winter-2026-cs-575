@@ -9,14 +9,16 @@ def test_homework_problem_9() -> None:
 
     # when
     ## FIX THIS ADJACENCY LIST
-    adjacency_list: dict[int, set[int]] = {1: {2},
-                                           2: {3},
-                                           3: {4},
-                                           4: {5},
-                                           5: {1},
-                                           6: {5},
-                                           7: {6}}
+    adjacency_list: dict[int, set[int]] = {1: {2, 3, 4, 5, 6, 7},
+                                           2: {1, 3, 4, 5},
+                                           3: {1, 2},
+                                           4: {1, 2},
+                                           5: {1, 2},
+                                           6: {1},
+                                           7: {1},
+                                           }
     G = adjacency_list_to_graph(adjacency_list)
+    print(f"Density: {nx.density(G)}")
 
     # then
     assert nx.is_connected(G)
