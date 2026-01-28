@@ -35,7 +35,7 @@ def test_hw4_problem5() -> None:
     # Then
     infectious_history = my_simulation.I
     assert N >= minimum_population_size
-    assert infectious_history[0] <= 0.1*N
+    assert max(infectious_history) <= 0.1 * N 
     susceptible_history = my_simulation.S
     assert susceptible_history[-1] >= 0.4*N
     recovered_history = my_simulation.R

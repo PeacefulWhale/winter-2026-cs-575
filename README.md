@@ -31,6 +31,8 @@ brew install graphviz
 winget install -e --id Graphviz.Graphviz
 ```
 
+This installs the `graphviz` python module globally on your computer, in contrast to the other python modules that are installed only within the virtual environment. If you are using Windows (PowerShell), you'll probably need to update the path inside VSCode so that it can find the `graphviz` module. Use an AI assistant for instructions on how to update the path.
+
 5. Select the Python interpreter in VS Code: Command Palette → `Python: Select Interpreter` → pick `.venv`.
 
 ---
