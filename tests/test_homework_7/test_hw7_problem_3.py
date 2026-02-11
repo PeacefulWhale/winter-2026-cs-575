@@ -2,9 +2,9 @@ import networkx as nx
 from typing import Tuple, Hashable, Set
 
 
-def test_hw7_problem_2() -> None:
+def test_hw7_problem_3() -> None:
     """
-    Problem 2: Create a graph and a partition of the nodes such that Q >= 0.95.
+    Problem 3: Create a graph and a partition of the nodes such that Q = -1/2.
     Graph must have >= 5 vertices, >= 2 edges, and partition must have >= 2 sets.
     """
 
@@ -17,18 +17,18 @@ def test_hw7_problem_2() -> None:
     # TODO: Define partition
     partition: Tuple[Set[Hashable], ...] = ()
 
-    # Basic structural checks
+    # Validate structure
     assert isinstance(G, nx.Graph)
     assert G.number_of_nodes() >= 5
     assert G.number_of_edges() >= 2
 
-    # Partition validity checks
+    # Validate partition
     assert len(partition) >= 2
     assert all(len(group) > 0 for group in partition)
     union = set().union(*partition)
     assert union == set(G.nodes())
     assert sum(len(group) for group in partition) == len(union)
 
-    # Modularity check
+    # Check modularity
     q = nx.community.modularity(G, partition)
-    assert q >= 0.95    # Q >= 0.95
+    assert abs(q - (-0.5)) < 0.01  # Q ≈ -1/2
