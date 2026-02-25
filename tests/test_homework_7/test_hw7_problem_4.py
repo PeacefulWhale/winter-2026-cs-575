@@ -39,6 +39,7 @@ def test_hw7_problem_4() -> None:
                    for i, group in enumerate(partition) if node in group]
     nx.draw(G, pos, with_labels=True, node_color=node_colors, edge_color='gray', node_size=500)
     plt.savefig("/workspaces/winter-2026-cs-575/7_4_output.png")
+    plt.close()
     
     # Validate structure
     assert isinstance(G, nx.Graph)
