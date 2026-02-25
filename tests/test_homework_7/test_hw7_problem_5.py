@@ -21,6 +21,7 @@ def test_hw7_problem_5() -> None:
     pos = nx.spring_layout(G)
     nx.draw(G, pos, with_labels=True, edge_color='gray', node_size=500)
     plt.savefig("/workspaces/winter-2026-cs-575/7_5_output.png")
+    plt.close()
 
     # Validate required edges exist
     required_edges = [(0, 1), (2, 3), (4, 5)]
